@@ -39,3 +39,9 @@
   from = "/ar/*"
   to = "/:splat"
   status = 200
+
+# Proxy /api/checkstatus → Netlify function
+[[redirects]]
+  from = "/api/checkstatus"
+  to = "/.netlify/functions/checkstatus"
+  status = 200
