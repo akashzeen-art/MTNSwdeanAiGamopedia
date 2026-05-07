@@ -14,10 +14,10 @@
     <meta name="theme-color" content="#000000">
     <meta name="format-detection" content="telephone=no">
 
-    <link rel="icon" href="./images/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+    <link rel="icon" href="./icons/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/favicon/apple-touch-icon.png">
     <link rel="manifest" href="./manifest.webmanifest">
     <link rel="stylesheet" type="text/css" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Playfair+Display&family=Roboto+Slab&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
@@ -25,6 +25,7 @@
     <script src="./i18n/ar.js"></script>
     <script src="./i18n.js"></script>
     <script type="module" src="./main.js"></script>
+    <script src="./myAccount.js"></script>
   </head>
   <body>
     <canvas class="webgl"></canvas>
@@ -54,21 +55,37 @@
       </div>
     </nav>
     <main>
-
       <section id="section2">
-        <div class="sec5Tit content1" data-i18n="myAccountTitle">
-          My Account
-        </div>
-        <div class="secContact content2">
-          <input type="tel" id="unsubscribe_contact" value="" data-i18n-placeholder="mobilePlaceholder" placeholder="Mobile Number" autocomplete="off">
-          <div class="secMail">
-            <p data-i18n="unsubscribe">Unsubscribe</p>
+        <div class="sec5Tit content1" data-i18n="myAccountTitle">My Account</div>
+
+        <!-- NOT LOGGED IN: login form -->
+        <div id="account-login" class="secContact content2" style="flex-direction:column;align-items:center;gap:1rem;">
+          <p style="color:beige;font-family:'Josefin Sans',sans-serif;font-size:0.9rem;" data-i18n="accountLoginPrompt">Enter your mobile number to view your account</p>
+          <div style="display:flex;align-items:center;border:2px solid #ffc800;border-radius:0.75rem;overflow:hidden;max-width:320px;width:100%;">
+            <span style="padding:0.6rem 0.75rem;background:rgba(255,200,0,0.1);color:#ffc800;font-family:'Josefin Sans',sans-serif;font-size:0.9rem;font-weight:700;border-right:2px solid #ffc800;white-space:nowrap;">+249</span>
+            <input id="account_msisdn" type="tel" placeholder="998688782" maxlength="9" autocomplete="off" style="flex:1;border:none;background:transparent;padding:0.6rem 0.75rem;font-family:'Josefin Sans',sans-serif;font-size:0.9rem;outline:none;color:beige;">
           </div>
+          <p id="account_error" style="display:none;color:#dc2626;font-family:'Josefin Sans',sans-serif;font-size:0.8rem;"></p>
+          <button id="account_login_btn" aria-label="check account" data-i18n="accountCheckBtn" style="background:#ffc800;color:#000;font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;padding:0.6rem 2rem;border-radius:0.75rem;border:none;cursor:pointer;">Check Status</button>
         </div>
+
+        <!-- LOGGED IN: profile card -->
+        <div id="account-profile" style="display:none;flex-direction:column;align-items:center;gap:1.5rem;padding:2rem;">
+          <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#00c5eb,#006177);display:flex;align-items:center;justify-content:center;">
+            <span style="font-size:2.5rem;">👤</span>
+          </div>
+          <div style="text-align:center;">
+            <p style="color:#ffc800;font-family:'Josefin Sans',sans-serif;font-size:1.1rem;font-weight:700;margin:0;" id="profile_msisdn"></p>
+            <p style="color:beige;font-family:'Josefin Sans',sans-serif;font-size:0.8rem;margin:0.25rem 0 0;" data-i18n="accountService">Service: AiGamopedia MTN Sudan</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,200,0,0.3);border-radius:1rem;padding:1rem 2rem;text-align:center;min-width:220px;">
+            <p style="color:rgba(255,255,255,0.5);font-family:'Josefin Sans',sans-serif;font-size:0.75rem;margin:0 0 0.25rem;" data-i18n="accountStatus">Subscription Status</p>
+            <p id="profile_status" style="color:#22c55e;font-family:'Josefin Sans',sans-serif;font-size:1rem;font-weight:700;margin:0;"></p>
+          </div>
+          <button id="account_logout_btn" aria-label="logout" data-i18n="accountLogout" style="background:transparent;color:#dc2626;font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:0.9rem;text-transform:uppercase;padding:0.5rem 1.5rem;border-radius:0.75rem;border:2px solid #dc2626;cursor:pointer;">Logout</button>
+        </div>
+
       </section>
-      
-
-
     </main>
     <footer>
       <div class="copyright">
