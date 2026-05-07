@@ -711,6 +711,12 @@ const SERVICE_ID = '1000';
 let pendingGameUrl = null;
 
 function showMsisdnPopup(gameUrl) {
+  // If already logged in, open game directly
+  const saved = localStorage.getItem('aigamopedia_msisdn');
+  if (saved) {
+    openGame(gameUrl);
+    return;
+  }
   pendingGameUrl = gameUrl;
   const popup = document.getElementById('msisdnPopup');
   popup.style.display = 'flex';
@@ -781,6 +787,7 @@ document.getElementById('msisdnForm')?.addEventListener('submit', async (e) => {
       return;
     }
     if (data.subscribed) {
+      localStorage.setItem('aigamopedia_msisdn', document.getElementById('msisdn_input').value.trim());
       hideMsisdnPopup();
       openGame(pendingGameUrl);
     } else {
