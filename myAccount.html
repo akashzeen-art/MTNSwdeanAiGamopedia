@@ -78,9 +78,27 @@
             <p style="color:#ffc800;font-family:'Josefin Sans',sans-serif;font-size:1.1rem;font-weight:700;margin:0;" id="profile_msisdn"></p>
             <p style="color:beige;font-family:'Josefin Sans',sans-serif;font-size:0.8rem;margin:0.25rem 0 0;" data-i18n="accountService">Service: AiGamopedia MTN Sudan</p>
           </div>
-          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,200,0,0.3);border-radius:1rem;padding:1rem 2rem;text-align:center;min-width:220px;">
-            <p style="color:rgba(255,255,255,0.5);font-family:'Josefin Sans',sans-serif;font-size:0.75rem;margin:0 0 0.25rem;" data-i18n="accountStatus">Subscription Status</p>
-            <p id="profile_status" style="color:#22c55e;font-family:'Josefin Sans',sans-serif;font-size:1rem;font-weight:700;margin:0;"></p>
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,200,0,0.3);border-radius:1rem;padding:1.25rem 2rem;width:100%;max-width:320px;box-sizing:border-box;display:flex;flex-direction:column;gap:0.75rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:rgba(255,255,255,0.5);font-family:'Josefin Sans',sans-serif;font-size:0.78rem;" data-i18n="accountStatus">Status</span>
+              <span id="profile_status" style="font-family:'Josefin Sans',sans-serif;font-size:0.9rem;font-weight:700;"></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:rgba(255,255,255,0.5);font-family:'Josefin Sans',sans-serif;font-size:0.78rem;" data-i18n="accountPrice">Price</span>
+              <span id="profile_price" style="color:beige;font-family:'Josefin Sans',sans-serif;font-size:0.9rem;"></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:rgba(255,255,255,0.5);font-family:'Josefin Sans',sans-serif;font-size:0.78rem;" data-i18n="accountValidity">Validity</span>
+              <span id="profile_validity" style="color:beige;font-family:'Josefin Sans',sans-serif;font-size:0.9rem;"></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:rgba(255,255,255,0.5);font-family:'Josefin Sans',sans-serif;font-size:0.78rem;" data-i18n="accountActDate">Activated</span>
+              <span id="profile_actdate" style="color:beige;font-family:'Josefin Sans',sans-serif;font-size:0.9rem;"></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:rgba(255,255,255,0.5);font-family:'Josefin Sans',sans-serif;font-size:0.78rem;" data-i18n="accountRenewDate">Next Renewal</span>
+              <span id="profile_renewdate" style="color:beige;font-family:'Josefin Sans',sans-serif;font-size:0.9rem;"></span>
+            </div>
           </div>
           <button id="account_logout_btn" aria-label="logout" data-i18n="accountLogout" style="background:transparent;color:#dc2626;font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:0.9rem;text-transform:uppercase;padding:0.5rem 1.5rem;border-radius:0.75rem;border:2px solid #dc2626;cursor:pointer;">Logout</button>
         </div>

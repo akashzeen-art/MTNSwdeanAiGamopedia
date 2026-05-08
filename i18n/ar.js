@@ -59,6 +59,11 @@ window.I18N_AR = {
   accountActive: 'نشط ✓',
   accountInactive: 'غير مشترك',
   accountLogout: 'تسجيل خروج',
+  accountPrice: 'السعر',
+  accountValidity: 'الصلاحية',
+  accountDay: 'يوم',
+  accountActDate: 'تاريخ التفعيل',
+  accountRenewDate: 'موعد التجديد',
   // Terms & Conditions
   tcTitle: 'الشروط والأحكام',
   tc1: 'بعد إلغاء اشتراك الباقة اليومية، يمكن الوصول إلى محتوى البوابة حتى بعد 24 ساعة.',

@@ -59,6 +59,11 @@ window.I18N_EN = {
   accountActive: 'Active ✓',
   accountInactive: 'Not Subscribed',
   accountLogout: 'Logout',
+  accountPrice: 'Price',
+  accountValidity: 'Validity',
+  accountDay: 'Day(s)',
+  accountActDate: 'Activated',
+  accountRenewDate: 'Next Renewal',
   // Terms & Conditions
   tcTitle: 'Terms & Conditions',
   tc1: 'After the unsubscription of the Daily package, the portal content can be accessed even after 24 hours.',
