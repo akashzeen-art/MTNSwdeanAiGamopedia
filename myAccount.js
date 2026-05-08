@@ -48,8 +48,16 @@ async function loadProfile(msisdn) {
 }
 
 // Auto-login if saved
-const saved = localStorage.getItem('aigamopedia_msisdn');
-if (saved) loadProfile(saved);
+function init() {
+  const saved = localStorage.getItem('aigamopedia_msisdn');
+  if (saved) loadProfile(saved);
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
 
 // Login button
 document.getElementById('account_login_btn')?.addEventListener('click', async () => {
